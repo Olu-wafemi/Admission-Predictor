@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+
+{% block head%} {% endblock %}
+<title>Edit Posts</title>
+
+
+{% block body%}
+<h1>Get Predictions</h1>
+<div class="site-header">
+    <header><a href="{{url_for("posts")}}">
+            <h4>Chance of Admission Predictor</h4>
+        </a></header>
+</div>
+
+{% with messages=get_flashed_messages(with_categories=True) %}
+{% if messages %}
+{% for category,message in messages %}
+<div class="alert alert-info flash-price"><strong>{{message}}</strong></div>
+{% endfor%}
+{% endif %}
+{% endwith %}
+
+    <hr>
+    
+    <form action ="" method ='POST'>
+        GRE Score: 
+        <label for="GRE Score">:</label>
+        <input class="form-control" type="number" name='GRE Score' id = 'title' placeholder="Enter value" aria-label="Enter Title">
+        <br>
+        TOEFL Score: 
+        <label for="TOEFL Score"></label>
+        <input class="form-control" type="number" name='TOEFL Score' id = 'author' placeholder="Enter value" aria-label="Author">
+  
+        <br>
+        
+        
+       
+        University Rating:
+        <label for="University Rating"></label>
+        <input class="form-control" type="number" name='University Rating' id = 'University Rating' placeholder="Enter value" aria-label="Enter Title">
+        <br>
+        SOP (Statement of Purpose):
+        <label for="SOP"></label>
+        <input class="form-control" type="number" name='SOP' id = 'title' placeholder="Enter value" aria-label="Enter Title">
+        <br>
+        LOR (Letter of Recommendation):
+        <label for="LOR"></label>
+       
+        <input class="form-control" type="number" name='LOR ' id = 'title' placeholder="Enter value" aria-label="Enter Title">
+        <br>
+        CGPA: 
+        <label for="CGPA"></label>
+        <input class="form-control" type="number" name='CGPA' id = 'title' placeholder="Enter value" aria-label="Enter Title">
+        <br>
+        Research: 
+        <label for="Research"></label>
+        <input class="form-control" type="number" name='Research' id = 'title' placeholder="Enter value" aria-label="Enter Title">
+        <br>
+
+        <br>
+        <input type = 'submit' value = 'Get Score'>
+        <br>
+    </form>
+
+    <hr>
+{% endblock %}    
